@@ -15,10 +15,12 @@ const IGNORE_REFERRER = false;
 const SEND_PAGE_VIEW = true;
 
 // Get promotion-related data from URL (optional)
+const UTM_ID = "utm_id";
 const UTM_CAMPAIGN = "utm_campaign";
 const UTM_SOURCE = "utm_source";
 const UTM_MEDIUM = "utm_medium";
-const PAID_SEARCH = "search_queries";
+const UTM_CONTENT = "utm_content";
+const UTM_TERM = "utm_term"; // can be search query.
 
 //  Cookies-related variable (optional)
 const COOKIE_EXPIRY = 28 * 24 * 60 * 60; /* 28 days, in seconds */
@@ -40,12 +42,12 @@ gtag('set', 'send_page_view', SEND_PAGE_VIEW);
 gtag('set', 'client_id', CLIENT_ID);
 gtag('set', 'ignore_referrer', IGNORE_REFERRER);
 gtag('set', 'campaign', {
-    'id': CAMPAIGN_ID,
+    'id': UTM_ID,
     'source': UTM_SOURCE,
     'medium': UTM_MEDIUM,
     'name': UTM_CAMPAIGN,
-    'term': PAID_SEARCH,
-    'content': null
+    'term': UTM_TERM,
+    'content': UTM_CONTENT
 });
 
 // Cookies (Optionals)
