@@ -10,6 +10,8 @@ const SITE_LANGUAGE = "th-th";
 // Privacy-related variable, based on user's consent (optional)
 const ALLOW_CONVERSION = true;
 const AD_PERSONALIZATION = true;
+const CLIENT_ID = "aaa.bbb";
+const IGNORE_REFERRER = false;
 const SEND_PAGE_VIEW = true;
 
 // Get promotion-related data from URL (optional)
@@ -35,6 +37,8 @@ const APPLY_PROVINCE = "Bangkok";
 gtag('set', 'allow_google_signals', ALLOW_CONVERSION);
 gtag('set', 'allow_ad_personalization_signals', AD_PERSONALIZATION);
 gtag('set', 'send_page_view', SEND_PAGE_VIEW);
+gtag('set', 'client_id', CLIENT_ID);
+gtag('set', 'ignore_referrer', IGNORE_REFERRER);
 gtag('set', 'campaign', {
     'id': CAMPAIGN_ID,
     'source': UTM_SOURCE,
