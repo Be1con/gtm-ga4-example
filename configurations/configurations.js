@@ -26,12 +26,12 @@ const UTM_TERM = "utm_term"; // can be search query.
 const COOKIE_EXPIRY = 28 * 24 * 60 * 60; /* 28 days, in seconds */
 const COOKIE_FLAGS = "SameSite=None;Secure";
 const COOKIE_PATH = "/"; /* Place Where to Store Cookies */
-const COOKIE_PREFIX = "jwc_"; /* In case of custom cookie prefix tag. */
+const COOKIE_PREFIX = "genclick_"; /* In case of custom cookie prefix tag. */
 const COOKIE_UPDATE = true; /* Use for updating cookie on the browser */
 
 //  User properties (optional, based on use cases, these are some of example of the use cases. Maximum custom properties = 25).
-const APPLY_TRACK = "Web Content";
-const APPLY_PROVINCE = "Bangkok";
+const AFFILIATION = "Thai Airways";
+const ENABLE_COUPONCODE = false;
 
 // Use these configurations to configure the experience of the website
 
@@ -61,7 +61,8 @@ gtag('set', 'cookie_update', COOKIE_UPDATE);
 gtag('set', 'content_group', URL_PATH);
 gtag('set', 'language', SITE_LANGUAGE);
 gtag('set', 'user_id', USER_ID);
+// Set it up if there is user properties on the website
 gtag('set', 'user_properties', {
-    'apply_track': APPLY_TRACK,
-    'apply_province': APPLY_PROVINCE
+    'affiliation': AFFILIATION,
+    'enable_couponcode': ENABLE_COUPONCODE
 });

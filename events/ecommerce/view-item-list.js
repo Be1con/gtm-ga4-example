@@ -1,21 +1,17 @@
-// Create total price parameters for cart, you can use LocalStorage for this part
-const pageListId = "subcategory_l2_page";
-const pageListName = "Subcategory Level 2 Page";
-
-// Create item constants as example of the product in checkout process
-const productCode = "515855";
-const affiliation = "MakroClick Warehouse";
-const itemCouponCode = "DISCOUNT_CODE";
+// Create item constants as example of the product in displaying item list process
+const planCode = "D2CTAGAS";
+const planName = 'GEN Travel Safe - Gold Asia'
+const affiliation = "GEN Click"; // In case of affiliated channel, you can change it to its channel, i.e., King Power, Thai Airways
+const itemCouponCode = "COUPON_CODE";
 const itemDiscount = 100;
-const cartIndex = 0;
-const brand = "Generic";
-const category = "Butchery & Egg";
-const subCategoryL1 = "Fresh Chicken & Poultry";
-const subCategoryL2 = "Chilled Chicken";
-const variant = "Chilled";
-const itemListId = "subcategory_l2_page";
-const itemListName = "Subcategory Level 2 Page";
-const originalPrice = 6950;
+const itemIndex = 1; // Sequence of item displayed on the page (start at 0)
+const policyType = "Non-Life Policy";
+const policySubType = "Travel Policy";
+const productGroup = "GEN Travel Safe";
+const variant = "Standard"; // In case of insurer age 6M-14Y, set as "Underage". For 76-80Y, set as "Elder".
+const itemListId = "d2c_travel";
+const itemListName = "GEN Click - GEN Travel Safe";
+const originalPrice = 357;
 const quantity = 1;
 
 // Clear previous ecommerce object
@@ -29,15 +25,15 @@ dataLayer.push({
         item_list_name: pageListName,
         items: [
             {
-                item_id: productCode,
+                item_id: planCode,
+                item_name: planName,
                 affiliation: affiliation,
                 coupon: itemCouponCode,
                 discount: itemDiscount,
-                index: cartIndex,
-                item_brand: brand,
-                item_category: category,
-                item_category2: subCategoryL1,
-                item_category3: subCategoryL2,
+                index: itemIndex,
+                item_category: policyType,
+                item_category2: policySubType,
+                item_category3: productGroup,
                 item_variant: variant,
                 item_list_id: itemListId,
                 item_list_name: itemListName,

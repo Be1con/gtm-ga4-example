@@ -1,24 +1,19 @@
-// Create total price parameters for cart, you can use LocalStorage for this part
-const totalPrice = 34500;
-const currency = "MMK"; // For Cambodia, change to "KHR"
-const cartCoupon = "DISCOUNT_CODE"; // Cart-leveled coupon is not the same as item-leveled one
-const shippingMethod = "Standard Delivery";
-
 // Create item constants as example of the product in checkout process
-const productCode = "515855";
-const affiliation = "MakroClick Warehouse";
-const itemCouponCode = "DISCOUNT_CODE";
+const planCode = "D2CTAGAS";
+const planName = 'GEN Travel Safe - Gold Asia'
+const affiliation = "GEN Click"; // In case of affiliated channel, you can change it to its channel, i.e., King Power, Thai Airways
+const itemCouponCode = "COUPON_CODE";
 const itemDiscount = 100;
-const cartIndex = 0;
-const brand = "Generic";
-const category = "Butchery & Egg";
-const subCategoryL1 = "Fresh Chicken & Poultry";
-const subCategoryL2 = "Chilled Chicken";
-const variant = "Chilled";
-const itemListId = "subcategory_l2_page";
-const itemListName = "Subcategory Level 2 Page";
-const originalPrice = 6950;
+const itemIndex = 1; // Sequence of item displayed on the page (start at 0)
+const policyType = "Non-Life Policy";
+const policySubType = "Travel Policy";
+const productGroup = "GEN Travel Safe";
+const variant = "Standard"; // In case of insurer age 6M-14Y, set as "Underage". For 76-80Y, set as "Elder".
+const itemListId = "d2c_travel";
+const itemListName = "GEN Click - GEN Travel Safe";
+const originalPrice = 357;
 const quantity = 1;
+const shippingMethod = 'email';
 
 // Clear previous ecommerce object
 dataLayer.push({ ecommerce: null });
@@ -27,21 +22,20 @@ dataLayer.push({ ecommerce: null });
 dataLayer.push({
     event: "add_shipping_info",
     ecommerce: {
-        currency: currency,
+        currency: 'THB',
         value: totalPrice,
-        coupon: cartCoupon,
+        coupon: itemCouponCode,
         shipping_tier: shippingMethod,
         items: [
             {
-                item_id: productCode,
+                item_id: planCode,
                 affiliation: affiliation,
                 coupon: itemCouponCode,
                 discount: itemDiscount,
-                index: cartIndex,
-                item_brand: brand,
-                item_category: category,
-                item_category2: subCategoryL1,
-                item_category3: subCategoryL2,
+                index: itemIndex,
+                item_category: policySubType,
+                item_category2: policySubType,
+                item_category3: productGroup,
                 item_variant: variant,
                 item_list_id: itemListId,
                 item_list_name: itemListName,
